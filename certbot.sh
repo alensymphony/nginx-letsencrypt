@@ -2,7 +2,6 @@ if [[ ! -f /var/www/certbot ]]; then
     mkdir -p /var/www/certbot
 fi
 certbot certonly \
-        --staging
         --config-dir "${LETSENCRYPT_DIR:-/etc/letsencrypt}" \
 		--agree-tos \
 		--domains "$DOMAIN" \
@@ -11,6 +10,8 @@ certbot certonly \
 		--noninteractive \
 		--webroot \
 		--webroot-path /var/www/certbot \
+		# Uncommend this line to use staging LE env and to avoid limits (10 per day, 50 per week)
+		#--test-cert \
 		$OPTIONS || true
 
 if [[ -f "${LETSENCRYPT_DIR:-/etc/letsencrypt}/live/$DOMAIN/privkey.pem" ]]; then
