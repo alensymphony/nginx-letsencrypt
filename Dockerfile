@@ -1,4 +1,5 @@
-FROM nginx:1.15-alpine 
+FROM nginx:1.15-alpine
+COPY index.html /usr/share/nginx/html
 RUN apk add inotify-tools certbot openssl ca-certificates
 WORKDIR /opt
 COPY entrypoint.sh nginx-letsencrypt
