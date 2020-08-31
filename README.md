@@ -8,7 +8,7 @@ This is a companion repository to the post where its usage is explained @ https:
 
 In default.conf change server_name to your domain. Copy your site to /etc/nginx/html/
 
-# Uncommend this line in certbot.sh to use staging LetsEncrypt environment and to avoid limits (10 per day, 50 per week)
+Uncommend this line in certbot.sh to use staging LetsEncrypt environment and to avoid limits (10 per day, 50 per week)
 		#--test-cert \
 
 # Building
