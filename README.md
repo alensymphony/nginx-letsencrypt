@@ -15,6 +15,6 @@ Uncommend this line in certbot.sh to use staging LetsEncrypt environment and to 
 docker build -t nginx-letsencrypt .
 
 # Running
-docker run -e DOMAIN=my.domain.example.com -e EMAIL=my.email@my.provider.example.com -p 80:80 -p 443:443 -d nginx-letsencrypt
+docker run -v /root/nginx-letsencrypt/certs:/etc/letsencrypt -e CN=testing.zigguratintl.com -e SAN=testing.zigguratintl.com -p 80:80 -p 443:443 -d nginx-letsencrypt
 
 Or add ENV variables to Dockerfile
